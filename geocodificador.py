@@ -8,10 +8,8 @@ answer = requests.get(f"https://geocoding-api.open-meteo.com/v1/search?name={ciu
 answer = dict(json.loads(answer.text))
 
 
-with open("answer.json", "w") as file:
-    list = [
-        (answer)["results"][0]["latitude"],
-        (answer)["results"][0]["longitude"],
-        (answer)["results"][0]["country"]
-    ]
-    json.dump(list, file)
+list = [
+    (answer)["results"][0]["latitude"],
+    (answer)["results"][0]["longitude"],
+    (answer)["results"][0]["country"]
+]
